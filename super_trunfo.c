@@ -15,9 +15,9 @@ int main() {
     scanf("%s", CodC1);
 
     printf("Digite o nome da cidade: \n");
-    getchar(); // Limpa o buffer antes de fgets
+    getchar(); 
     fgets(NomeCidadeC1, sizeof(NomeCidadeC1), stdin);
-    NomeCidadeC1[strcspn(NomeCidadeC1, "\n")] = '\0'; // Remove o '\n' no final
+    NomeCidadeC1[strcspn(NomeCidadeC1, "\n")] = '\0'; 
 
     printf("Digite o número da população da cidade em número inteiro: \n");
     scanf("%d", &PopulacaoC1);
