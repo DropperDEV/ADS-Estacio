@@ -4,18 +4,19 @@
 int main() {
     int PopulacaoC1, PopulacaoC2, NumTurismoC1, NumTurismoC2;
     float AreaC1, AreaC2, PIBC1, PIBC2, DensidPC1 = 0, DensidPC2 = 0, PIBPerCapitaC1, PIBPerCapitaC2, SuperPoderC1, SuperPoderC2;
-    char EstadoC1, EstadoC2, CodC1[4], CodC2[4], NomeCidadeC1[50], NomeCidadeC2[50];
+    char EstadoC1[2], EstadoC2[2], CodC1[4], CodC2[4], NomeCidadeC1[50], NomeCidadeC2[50];
+    
 
     printf("---*Carta 1---*\n");
-    printf("Digite uma letra que representa o Estado da Carta: \n");
-    scanf(" %c", &EstadoC1);
+    printf("Digite a sigla que representa o Estado da Carta: \n");
+    scanf(" %s", EstadoC1);
     printf("Digite o código da carta: \n");
     scanf("%s", CodC1);
     printf("Digite o nome da cidade: \n");
     getchar(); // Consumir o '\n' antes do fgets
     fgets(NomeCidadeC1, sizeof(NomeCidadeC1), stdin);
     NomeCidadeC1[strcspn(NomeCidadeC1, "\n")] = '\0';
-    printf("Digite a população da cidade: \n");
+    printf("Digite a população da cidade(em valor absoluto): \n");
     scanf("%d", &PopulacaoC1);
     printf("Digite a área da cidade (em km²): \n");
     scanf("%f", &AreaC1);
@@ -25,16 +26,16 @@ int main() {
     scanf("%d", &NumTurismoC1);
 
     printf("---*Carta 2---*\n");
-    printf("Digite uma letra que representa o Estado da Carta: \n");
-    getchar(); // Consumir o '\n' antes do próximo caractere
-    scanf(" %c", &EstadoC2);
+    printf("Digite a sigla que representa o Estado da Carta: \n");
+    getchar(); 
+    scanf(" %s", EstadoC2);
     printf("Digite o código da carta: \n");
     scanf("%s", CodC2);
     printf("Digite o nome da cidade: \n");
     getchar();
     fgets(NomeCidadeC2, sizeof(NomeCidadeC2), stdin);
     NomeCidadeC2[strcspn(NomeCidadeC2, "\n")] = '\0';
-    printf("Digite a população da cidade: \n");
+    printf("Digite a população da cidade(em valor absoluto): \n");
     scanf("%d", &PopulacaoC2);
     printf("Digite a área da cidade (em km²): \n");
     scanf("%f", &AreaC2);
@@ -53,7 +54,7 @@ int main() {
 
     // Saídas
     printf("\n--- Carta 1 ---\n");
-    printf("Estado: %c \n", EstadoC1);
+    printf("Estado: %s \n", EstadoC1);
     printf("Código: %s \n", CodC1);
     printf("Nome da Cidade: %s \n", NomeCidadeC1);
     printf("População: %d \n", PopulacaoC1);
@@ -66,7 +67,7 @@ int main() {
 
 
     printf("\n--- Carta 2 ---\n");
-    printf("Estado: %c \n", EstadoC2);
+    printf("Estado: %s \n", EstadoC2);
     printf("Código: %s \n", CodC2);
     printf("Nome da Cidade: %s \n", NomeCidadeC2);
     printf("População: %d \n", PopulacaoC2);
